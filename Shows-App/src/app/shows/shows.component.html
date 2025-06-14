@@ -1,0 +1,15 @@
+<p id="title">{{ show.title }}</p>
+
+<div id="imgPlot-container">
+    <img id="frontIMG" src="{{ show.poster }}" alt="Show slika">
+    <p>{{ show.plot }}</p>
+    <p>Languages: {{ show.language }}</p>
+    <p>Genres: {{ show.genre }}</p>
+    <p>Seasons: {{ show.totalSeasons }}</p>
+    <p>IMDb Rating: {{ show.imdbRating }}</p>
+</div>
+
+<div id="actors-container">
+    <h4>Cast</h4>
+    <p>{{ show.actors }}</p>
+</div>

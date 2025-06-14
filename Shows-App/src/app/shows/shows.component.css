@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+#title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+#imgPlot-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    background-color: #b6a5a5;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#frontIMG {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+#imgPlot-container p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+#imgPlot-container p:nth-child(3), 
+#imgPlot-container p:nth-child(4), 
+#imgPlot-container p:nth-child(5),
+#imgPlot-container p:nth-child(6) {
+    font-size: 14px;
+    color: #555;
+}
+
+#imgPlot-container p:nth-child(6) {
+    font-weight: bold;
+    color: #f1c40f;
+}
+
+#episodes-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#episodes-container ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#episodes-container ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+#episodes-container ul li:last-child {
+    border-bottom: none;
+}
+
+#episodes-container ul li:hover {
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+#actors-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #dad1d1;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#actors-container p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+}
+
+#actors-container h4 {
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    #imgPlot-container {
+        padding: 15px;
+    }
+
+    #episodes-container, #actors-container {
+        padding: 15px;
+    }
+
+    #title {
+        font-size: 28px;
+    }
+}

@@ -1,0 +1,28 @@
+<input type="text" placeholder="Find show/movie..." #search (input)="onChange(search.value)"
+    [value]="searchQuery"
+    [routerLink]="['/search']"
+    [queryParams]="{ query: searchQuery }"
+  />
+
+@for(front of fronts$ | async; track front.imdbID){
+  @if (front.type == 'series'){
+    <a class="frontsA" routerLink="/shows/{{ front.imdbID }}">
+      <div class="frontss">
+        <p class="title">{{ front.title }}</p>
+        <p class="year">{{ front.year }}</p>
+        <p class="type">{{ front.type }}</p>
+        <img class="frontIMG" src="{{ front.poster }}" alt="Image Show">
+      </div>
+    </a>
+  }
+  @else{
+    <a class="frontsA" routerLink="/movies/{{ front.imdbID }}">
+      <div class="frontss">
+        <p class="title">{{ front.title }}</p>
+        <p class="year">{{ front.year }}</p>
+        <p class="type">{{ front.type }}</p>
+        <img class="frontIMG" src="{{ front.poster }}" alt="Image Movie">
+      </div>
+    </a>
+  }
+}

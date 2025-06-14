@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./Shows-App
+    container_name: frontend
+    ports:
+      - "4200:4200"
+    depends_on:
+      - backend
+    networks:
+      - shows-network
+
+  backend:
+    build:
+      context: ./Shows-App-Backend
+    container_name: backend
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://mongo:27017/shows_db
+    depends_on:
+      - mongo
+    networks:
+      - shows-network
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - shows-network
+
+volumes:
+  mongo-data:
+
+networks:
+  shows-network:
